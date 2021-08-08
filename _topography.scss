@@ -1,0 +1,92 @@
+body {
+    font-size: 1.6rem;
+    color: $color-grey-dark;
+    font-family: 'Lato';
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.heading-primary {
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+
+    
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        line-height: 3.5rem;
+        letter-spacing: 3.5rem;
+        animation-name: moveleft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+
+        @include respond(phone){
+        letter-spacing: 1rem;
+        font-size: 5rem;
+        }
+    }
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        letter-spacing: 1.7rem;
+        line-height: 2.5rem;
+        animation-name: moveright;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+
+        @include respond(phone){
+            letter-spacing: .5rem;
+        }
+    }
+}
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: all .2s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    color: $color-primary-dark;
+    
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-image: linear-gradient(to right, $color-secondary-light, $color-primary-dark);
+    }
+
+    @include respond(tab-port){
+        font-size: 3rem;
+        text-align: center;
+        margin-top:  10rem;
+
+    }
+
+    @include respond(phone){
+        font-size: 2.5rem;
+        text-align: center;
+        margin-top:  11rem;
+    }
+
+    &:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+    }
+}
+.heading-tertiary {
+    font-size: $default-font-size;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.paragraph {
+    font-size: $default-font-size;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}
